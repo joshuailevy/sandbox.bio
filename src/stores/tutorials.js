@@ -32,6 +32,7 @@ import { config as datepro7 } from "$content/datepro-07-text-processing/config";
 import { config as datepro8 } from "$content/datepro-08-semantic-processing/config";
 import { config as ska2Intro } from "$content/ska2-intro/config";
 import { config as mummerCirca } from "$content/mummer-circa/config";
+import { config as hybridCaptureIntro } from "$src/content/wastewater-hybrid-capture/config";
 import { env } from "$env/dynamic/public";
 
 // All tutorials
@@ -59,6 +60,7 @@ export const tutorials = readable([
 	seqkitIntro,
 	ska2Intro,
 	mummerCirca,
+	hybridCaptureIntro,
 	// Community tutorials
 	ifblinuxbasics1,
 	ifblinuxbasics2,
