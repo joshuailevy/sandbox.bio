@@ -5,7 +5,6 @@ import Step2 from "./steps/Step2.md";
 import Conclusion from "./steps/Conclusion.md";
 // Exercises
 import Exercise1 from "./exercises/Exercise1.md";
-import Exercise2 from "./exercises/Exercise2.md";
 
 export const config = {
 	// Metadata
@@ -17,7 +16,7 @@ export const config = {
 	difficulty: ["beginner"],
 
 	// Preload these tools as soon as the page loads
-	tools: ["minimap2", "ls", "head", "tail", "sort"],
+	tools: ["minimap2", "samtools", "wc", "cat", "gzip", "gunzip", "ls", "head", "tail", "sort"],
 
 	// Order of steps
 	steps: [
@@ -25,8 +24,7 @@ export const config = {
 		{ name: "The data", component: Step1 },
 		{ name: "Mapping SARS-CoV-2 reads using Minimap2", component: Step2 },
 		// We use subtitle to define subsections. Click the "1 / 6" button at the bottom to see the effect on the table of contents
-		{ name: "Adenovirus F Reads", component: Exercise1, subtitle: "Find reads mapping to a different reference genome from the same sample", header: true },
-		{ name: "Exercises", component: Exercise2, subtitle: "Find exons in 500kb regions" },
+		{ name: "Compare pathogen mapping", component: Exercise1, subtitle: "Read counts across SARS-CoV-2 vs HAdV-F references", header: true },
 		{ name: "The end", component: Conclusion, header: true }
 	],
 
