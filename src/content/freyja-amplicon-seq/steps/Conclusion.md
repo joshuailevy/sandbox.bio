@@ -1,3 +1,7 @@
+<script>
+import Link from "$components/Link.svelte";
+</script>
+
 This concludes the Freyja amplicon sequencing tutorial!
 
 For more information on Freyja and iVar, check out the following resources:
