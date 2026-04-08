@@ -7,9 +7,31 @@ let loading = true;
 let igvDiv;
 let browser = {};
 
+function isCustomReferenceFastaUrl(genome) {
+	return (
+		typeof genome === "string" &&
+		(genome.startsWith("/") || genome.startsWith("http://") || genome.startsWith("https://")) &&
+		/\.(fa|fasta|fna)(\?|$)/i.test(genome)
+	);
+}
+
 onMount(async () => {
+	// `genome` is only for built-in IDs (e.g. "hg19"). A path/URL to a FASTA must use `reference`.
+	if (!options.reference && isCustomReferenceFastaUrl(options.genome)) {
+		const fastaURL = options.genome;
+		const baseId = fastaURL.split("/").pop().replace(/\.(fa|fasta|fna)$/i, "") || "custom";
+		options.reference = {
+			id: baseId,
+			name: baseId,
+			fastaURL,
+			indexURL: `${fastaURL}.fai`,
+			tracks: []
+		};
+		delete options.genome;
+	}
+
 	// Explicitly specify the reference URLs so that igv.js doesn't try downloading RefSeq genes
-	if (!options.genome) {
+	if (!options.genome && !options.reference) {
 		options.reference = {
 			id: "hg19",
 			name: "Human (hg19)",

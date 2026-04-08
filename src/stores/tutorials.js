@@ -32,6 +32,7 @@ import { config as datepro8 } from "$content/datepro-08-semantic-processing/conf
 import { config as ska2Intro } from "$content/ska2-intro/config";
 import { config as mummerCirca } from "$content/mummer-circa/config";
 import { config as hybridCaptureIntro } from "$src/content/wastewater-hybrid-capture/config";
+import { config as freyjaAmpliconSequencing } from "$src/content/freyja-amplicon-seq/config";
 import { env } from "$env/dynamic/public";
 
 // All tutorials
@@ -75,14 +76,15 @@ export const tutorials = readable([
 
 	// WES 2026 tutorials
 	hybridCaptureIntro,
+	freyjaAmpliconSequencing,
 ]);
 
 // Tutorial listings
 export const categories = readable([
 	{
-		name: "WES 2026 tutorials",
+		name: "WES 2026 Workshop",
 		icon: "star-fill",
-		tutorials: [hybridCaptureIntro],
+		tutorials: [terminalIntro, samtoolsIntro, hybridCaptureIntro, freyjaAmpliconSequencing],
 		mailinglist: true
 	},
 	{

@@ -12,8 +12,8 @@ export const config = {
 	name: "Wastewater Hybrid Capture Sequencing Analysis",
 	subtitle: `by <a href="https://google.com" target="_blank">Dylan Pilz</a>`,
 	description: "Analyze wastewater hybrid capture sequencing data using standard bioinformatics tools.",
-	tags: ["minimap2", "igv"],
-	difficulty: ["beginner"],
+	tags: ["minimap2", "samtools"],
+	difficulty: ["intermediate"],
 
 	// Preload these tools as soon as the page loads
 	tools: ["minimap2", "samtools", "wc", "cat", "gzip", "gunzip", "ls", "head", "tail", "sort"],
