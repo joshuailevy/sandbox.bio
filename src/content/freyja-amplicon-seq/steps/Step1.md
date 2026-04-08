@@ -8,8 +8,8 @@ let igvOptions = {
 	genome: "/data/freyja-amplicon-seq/NC_063383.1.fasta",
 	locus: "NC_063383.1:105000-112000",
 	tracks: [
-		{ url: "/data/freyja-amplicon-seq/MPXV_primers_v1.2.bed", name: "Amplicon PCR primer scheme (v1.2)" },
-		{ url: "/data/freyja-amplicon-seq/sample_1.bam", name: "Sample (aligned to reference genome)" },
+		{ url: "/data/freyja-amplicon-seq/MPXV_primers_v1.2.bed", name: "Amplicon PCR primer scheme" },
+		{ url: "/data/freyja-amplicon-seq/sample_1.bam", name: "Sample" },
 	]
 };
 </script>

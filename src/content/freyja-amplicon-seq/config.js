@@ -2,17 +2,17 @@
 import Intro from "./steps/Intro.md";
 import Step1 from "./steps/Step1.md";
 import Step2 from "./steps/Step2.md";
+import Step3 from "./steps/Step3.md";
+import Step4 from "./steps/Step4.md";
+import Step5 from "./steps/Step5.md";
 import Conclusion from "./steps/Conclusion.md";
-
-// Exercises
-import Exercise1 from "./exercises/Exercise1.md";
 
 export const config = {
 	// Metadata
 	id: "freyja-amplicon-seq",
 	name: "Amplicon Sequencing Analysis",
-	subtitle: `by <a href="https://google.com" target="_blank">Your Name</a>`,
-	description: "Analyze amplicon sequencing data using `ivar` and `freyja`.",
+	subtitle: `by <a href="https://google.com" target="_blank">Dylan Pilz</a>`,
+	description: "Analyze amplicon sequencing data using iVar and Freyja.",
 	tags: ["freyja", "ivar", "igv"],
 	difficulty: ["intermediate"],
 
@@ -22,11 +22,12 @@ export const config = {
 	// Order of steps
 	steps: [
 		{ name: "Introduction", component: Intro },
-		{ name: "Overview of the data", component: Step1 },
-		{ name: "Bedtools help", component: Step2 },
-		// We use subtitle to define subsections. Click the "1 / 6" button at the bottom to see the effect on the table of contents
-		{ name: "Exercises", component: Exercise1, subtitle: "Find non-exons", header: true },
-		{ name: "The end", component: Conclusion, header: true }
+		{ name: "Amplicon Sequencing Data", component: Step1 },
+		{ name: "Primer Trimming", component: Step2 },
+		{ name: "Sorting and Indexing", component: Step3 },
+		{ name: "Variant Calling", component: Step4 },
+		{ name: "Demixing", component: Step5 },
+		{ name: "Conclusion", component: Conclusion },
 	],
 
 	// Files within "data/" that you need at runtime.
