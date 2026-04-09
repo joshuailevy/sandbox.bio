@@ -9,3 +9,9 @@ Luckily, `ivar` has built-in functionality to do just that!
 Run the following command to trim the primers from the reads:
 
 <Execute command="ivar trim -i sample_1.bam -b MPXV_primers_v1.2.bed -p trimmed" />
+
+Note the following options:
+
+- `-i sample_1.bam` tells `ivar` that we want to trim the primers from the file `sample_1.bam`
+- `-b MPXV_primers_v1.2.bed` tells `ivar` that we want to use the file `MPXV_primers_v1.2.bed` as our primer BED file
+- `-p trimmed` tells `ivar` that we want to output the trimmed reads with the **p**refix "trimmed", so the resulting file will be called `trimmed.bam`

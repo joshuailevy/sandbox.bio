@@ -10,7 +10,7 @@ import Conclusion from "./steps/Conclusion.md";
 export const config = {
 	// Metadata
 	id: "freyja-amplicon-seq",
-	name: "Amplicon Sequencing Analysis",
+	name: "Freyja Introduction",
 	subtitle: `by <a href="https://google.com" target="_blank">Dylan Pilz</a>`,
 	description: "Analyze amplicon sequencing data using iVar and Freyja.",
 	tags: ["freyja", "ivar", "igv"],

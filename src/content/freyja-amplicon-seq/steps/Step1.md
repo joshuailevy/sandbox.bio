@@ -18,11 +18,11 @@ We preloaded the data in your home directory for this tutorial. Let's take a loo
 
 Type <Execute command="ls" inline /> in the command line.
 
-Your directory contains a sample file (already aligned for you!) and some reference files:
+Your directory contains a sample file and some reference files. For this tutorial, we're going to assume you have experience aligning reads to a reference. If not, check out the <Link href="https://sandbox.bio/tutorials/bowtie2-intro">Bowtie2</Link> and <Link href="https://sandbox.bio/tutorials/samtools-intro">Samtools</Link> tutorials:
 - `NC_063383.1.fasta`: The mpox reference genome (GenBank accession NC_063383.1)
 - `MPXV_primers_v1.2.bed`: The amplicon PCR primer scheme
 
-In order to have a rough sense of the data, let's load it into IGV:
+In order to get a sense of the data, let's load it into IGV:
 
 <button class="btn btn-sm btn-primary mb-3" on:click={() => isOpen = !isOpen}>Launch IGV</button>
 
