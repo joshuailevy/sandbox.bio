@@ -1,11 +1,10 @@
-> This is a template for creating new sandbox.bio tutorials.
-> 
-> To modify this template, change the files within `src/content/_template/`.
-> 
-> Check out the [README](https://github.com/sandbox-bio/sandbox.bio/blob/main/README.md) for details about the file and folder structure.
+<script> import Execute from "$components/Execute.svelte"; import Link from "$components/Link.svelte"; </script>
 
-Our goal is to work through examples that demonstrate how to explore, process and manipulate genomic interval files (e.g., `BED`, `VCF`, `BAM`) with the `bedtools` software package.
 
-Some of our analysis will be based upon the [Maurano et al.](https://science.sciencemag.org/content/337/6099/1190) exploration of DnaseI hypersensitivity sites in hundreds of primary tissue types.
+Picture the scene: composite wastewater samples have just arrived from the treatment plant, and sequencing data is ready for analysis. Before interpreting trends or reporting signals, it’s critical to understand what the data is really telling us. In this tutorial, we explore the core concepts behind https://www.cdc.gov/wastewater-surveillance/wastewater-based surveillance</Link> and how it supports population-level public health monitoring.
 
-This tutorial is merely meant as an introduction to whet your appetite. There are many, many more tools and options than presented here. We therefore encourage you to read the [bedtools documentation](https://bedtools.readthedocs.io/en/latest/).
+Let’s start with the basics: wastewater surveillance is commonly used for two main purposes:
+
+1. Detecting and tracking pathogens or biomarkers in a community, often before clinical cases are reported; and  
+2. Monitoring temporal trends to inform public health decision-making, such as early outbreak detection or intervention assessment.
+
