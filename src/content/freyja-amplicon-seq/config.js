@@ -3,9 +3,6 @@ import Intro from "./steps/Intro.md";
 import Step1 from "./steps/Step1.md";
 import Step2 from "./steps/Step2.md";
 import Step3 from "./steps/Step3.md";
-import Step4 from "./steps/Step4.md";
-import Step5 from "./steps/Step5.md";
-import Conclusion from "./steps/Conclusion.md";
 
 export const config = {
 	// Metadata
