@@ -2,16 +2,15 @@
 import Execute from "$components/Execute.svelte";
 </script>
 
-We're now ready to call variants in our sample! `freyja variants` calls SNPs, insertions, and deletions in our sample. It also saves coverage depth information which will be important later when we run `freyja demix`.
+We're now ready to call variants in our sample! `ivar variants` calls SNPs, insertions, and deletions in our sample. It also saves coverage depth information which will be important later when we run `freyja demix`.
 
 Run the following command to call variants:
 
-<Execute command="freyja variants trimmed.sorted.bam --ref NC_063383.1.fasta --variants variants.tsv --depths depths.tsv" />
+<Execute command="samtools mpileup -aa -A -d 600000 -Q 20 -q 0 -B -f NC_063383.1.fasta trimmed.sorted.bam | tee >(cut -f1-4 > depths.tsv) | ivar variants -p variants.tsv -q 20 -t 0.0 -r NC_063383.1.fasta" />
 
-Let's break down the command:
-- `trimmed.sorted.bam` is a positional argument, so we don't use an input flag to specify our input file here
-- `--ref NC_063383.1.fasta` tells `freyja` that we want to call variants with respect to the Mpox reference genome
-- `--variants` and `--depths` correspond to the output filenames for the variants and depths files, respectively.
+There's a lot to unpack here, so let's break it down step by step.
+`ivar variants` requries that you pipe in (`|`) the output of `samtools mpileup` into `ivar variants`. The `tee` command saves th first four columns of the `samtools mpileup` output to the file `depths.tsv`. Finally, `ivar variants` calls variants from the piped input, using our reference genome. If you're curious about the other arguments, you can run `ivar variants --help` to see the full list of options.
+
 
 Let's take a look at the variant file:
 <Execute command="head variants.tsv" />
