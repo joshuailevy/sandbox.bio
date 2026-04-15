@@ -8,7 +8,7 @@ Type the following in the command line:
 
 Your directory contains paired-end read files (`*.fastq.gz`) as well as reference genomes (`*.fasta`) for pathogens of interest. The read files follow the standard paired-end naming convention, with `_1.fastq.gz` and `_2.fastq.gz` corresponding to forward and reverse reads.
 
-Rather than inspecting individual reads manually, a more efficient way to assess sequencing quality is to use an automated QC tool. Here, we will use <Link href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</Link>, which provides a comprehensive overview of sequencing quality metrics.
+Rather than inspecting individual reads manually, a more efficient way to assess sequencing quality is to use an automated QC tool. Here, we will use <Link href="https://github.com/kbrown3687524/WES_FastQC_Tutorial.git">GitHub Codespaces FastQC</Link>, which provides a comprehensive overview of sequencing quality metrics.
 
 Let’s run FastQC on all FASTQ files in the directory:
 <Execute inline command={"ls *.fastq.gz"} /> to list all the sequence files.
