@@ -84,7 +84,7 @@ export const categories = readable([
 	{
 		name: "WES 2026 Workshop",
 		icon: "star-fill",
-		tutorials: [terminalIntro, samtoolsIntro, hybridCaptureIntro, freyjaAmpliconSequencing],
+		tutorials: [terminalIntro, samtoolsIntro, hybridCaptureIntro, freyjaAmpliconSequencing, fastpIntro],
 		mailinglist: true
 	},
 	{
