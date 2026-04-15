@@ -1,6 +1,5 @@
 import { readable } from "svelte/store";
 import { config as _template } from "$content/_template/config.js";
-import { config as wes_intro } from "$content/wes_intro/config.js";
 import { config as terminalIntro } from "$content/terminal-basics/config.js";
 import { config as igvIntro } from "$content/igv-intro/config.js";
 import { config as bedtoolsIntro } from "$content/bedtools-intro/config.js";
@@ -32,6 +31,8 @@ import { config as datepro7 } from "$content/datepro-07-text-processing/config";
 import { config as datepro8 } from "$content/datepro-08-semantic-processing/config";
 import { config as ska2Intro } from "$content/ska2-intro/config";
 import { config as mummerCirca } from "$content/mummer-circa/config";
+import { config as hybridCaptureIntro } from "$src/content/wastewater-hybrid-capture/config";
+import { config as freyjaAmpliconSequencing } from "$src/content/freyja-amplicon-seq/config";
 import { env } from "$env/dynamic/public";
 
 // All tutorials
@@ -59,6 +60,7 @@ export const tutorials = readable([
 	seqkitIntro,
 	ska2Intro,
 	mummerCirca,
+	hybridCaptureIntro,
 	// Community tutorials
 	ifblinuxbasics1,
 	ifblinuxbasics2,
@@ -71,13 +73,20 @@ export const tutorials = readable([
 	datepro6,
 	datepro7,
 	datepro8,
-	// Template tutorial
-	_template,
-	wes_intro
+
+	// WES 2026 tutorials
+	hybridCaptureIntro,
+	freyjaAmpliconSequencing,
 ]);
 
 // Tutorial listings
 export const categories = readable([
+	{
+		name: "WES 2026 Workshop",
+		icon: "star-fill",
+		tutorials: [terminalIntro, samtoolsIntro, fastpIntro, hybridCaptureIntro, freyjaAmpliconSequencing],
+		mailinglist: true
+	},
 	{
 		name: "Recently added",
 		icon: "star-fill",
