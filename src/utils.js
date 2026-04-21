@@ -5,43 +5,7 @@ import { env } from "$env/dynamic/public";
 import { LOGGING, LOGGING_DEBUG } from "$src/config";
 import { user } from "$stores/user";
 
-const hasSupabaseAnonConfig = Boolean(env.PUBLIC_SUPABASE_URL && env.PUBLIC_SUPABASE_API_KEY);
-const supabaseAnonConfigError = {
-	message: "Missing PUBLIC_SUPABASE_URL or PUBLIC_SUPABASE_API_KEY; using a no-op Supabase client."
-};
-let hasWarnedMissingSupabaseAnonConfig = false;
-
-function warnMissingSupabaseAnonConfig() {
-	if (!hasWarnedMissingSupabaseAnonConfig) {
-		hasWarnedMissingSupabaseAnonConfig = true;
-		console.warn(supabaseAnonConfigError.message);
-	}
-}
-
-function createSupabaseAnonNoopClient() {
-	const withConfigError = async () => {
-		warnMissingSupabaseAnonConfig();
-		return { data: null, error: supabaseAnonConfigError };
-	};
-
-	return {
-		auth: {
-			getSession: async () => ({ data: { session: null }, error: null }),
-			signInWithPassword: withConfigError,
-			signInWithOAuth: withConfigError,
-			signOut: async () => ({ error: null })
-		},
-		from: () => ({
-			select: () => ({ single: withConfigError }),
-			update: () => ({ match: withConfigError }),
-			insert: withConfigError
-		})
-	};
-}
-
-export const supabaseAnon = hasSupabaseAnonConfig
-	? createClient(env.PUBLIC_SUPABASE_URL, env.PUBLIC_SUPABASE_API_KEY)
-	: createSupabaseAnonNoopClient();
+export const supabaseAnon = createClient(env.PUBLIC_SUPABASE_URL, env.PUBLIC_SUPABASE_API_KEY);
 
 // =============================================================================
 // Local state management
