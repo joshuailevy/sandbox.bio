@@ -6,7 +6,31 @@ import { env as envPublic } from "$env/dynamic/public";
 // Supabase Client (variables are stored as secrets in Cloudflare Worker -- see README)
 // -----------------------------------------------------------------------------
 
-export const supabase = createClient(envPublic.PUBLIC_SUPABASE_URL, env.SUPABASE_API_KEY);
+const hasSupabaseServerConfig = Boolean(envPublic.PUBLIC_SUPABASE_URL && env.SUPABASE_API_KEY);
+const supabaseServerConfigError = {
+	message: "Missing PUBLIC_SUPABASE_URL or SUPABASE_API_KEY; API writes are disabled."
+};
+let hasWarnedMissingSupabaseServerConfig = false;
+
+function createSupabaseServerNoopClient() {
+	const withConfigError = async () => {
+		if (!hasWarnedMissingSupabaseServerConfig) {
+			hasWarnedMissingSupabaseServerConfig = true;
+			console.warn(supabaseServerConfigError.message);
+		}
+		return { data: null, error: supabaseServerConfigError };
+	};
+
+	return {
+		from: () => ({
+			insert: withConfigError
+		})
+	};
+}
+
+export const supabase = hasSupabaseServerConfig
+	? createClient(envPublic.PUBLIC_SUPABASE_URL, env.SUPABASE_API_KEY)
+	: createSupabaseServerNoopClient();
 
 // -----------------------------------------------------------------------------
 // Utilities
