@@ -2,7 +2,6 @@
 import Intro from "./steps/Intro.md";
 import Step1 from "./steps/Step1.md";
 import Step2 from "./steps/Step2.md";
-import Step3 from "./steps/Step3.md";
 
 export const config = {
 	// Metadata
@@ -20,11 +19,7 @@ export const config = {
 	steps: [
 		{ name: "Introduction", component: Intro },
 		{ name: "Amplicon Sequencing Data", component: Step1 },
-		{ name: "Primer Trimming", component: Step2 },
-		{ name: "Sorting and Indexing", component: Step3 },
-		{ name: "Variant Calling", component: Step4 },
-		{ name: "Demixing", component: Step5 },
-		{ name: "Conclusion", component: Conclusion },
+		{ name: "Github Codespaces", component: Step2 },
 	],
 
 	// Files within "data/" that you need at runtime.
